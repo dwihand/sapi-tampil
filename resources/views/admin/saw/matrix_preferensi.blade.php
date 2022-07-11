@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    Matrix Preferensi | Sitem Pendukung Keputusan Pembelian Sapi
+    Matrix Preferensi | Sitem Rekomendasi Laptop
 @endsection
 @section('content')
 <br>

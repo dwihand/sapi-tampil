@@ -1,6 +1,6 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 @section('title')
-    Matrix Nilai | Sitem Pendukung Keputusan Pembelian Sapi
+    Data Sapi | Sitem Pendukung Keputusan Pembelian Sapi
 @endsection
 @section('content')
 <br>
@@ -8,22 +8,22 @@
 <div class="row">
     <div class="col-12">
         <div class="card-box table-responsive">
-            <h4 class="m-t-0 header-title"><b>Matrix Nilai</b></h4>
+            <h4 class="m-t-0 header-title"><b>Daftar Sapi</b></h4>
             <p class="text-muted font-14 m-b-30">
             
             </p>
-
-            <table id="table-mahasiswa" class="table table-bordered">
+            @include('admin.sapi.lihat-sapi')
+            <table id="table-sapi" class="table table-bordered">
                 <thead>
                 <tr>
                     <th>#</th>
                     <th>Merk Sapi</th>
                     <th>Keterangan</th>
-                    <th>Penghasilan Susu (C1)</th>
-                    <th>Konsumsi Pakan (C2)</th>
-                    <th>Umur Sapi (C3)</th>
-                    <th>Bobot Badan (C4)</th>
-                    <th>Price (C5)</th>                                          
+                    <th>Bobot Badan</th>
+                    <th>Penghasilan Susu</th>
+                    <th>Umur Sapi</th>
+                    <th>Konsumsi Pakan</th>
+                    <th>Prices</th>                                           
                 </tr>
                 </thead>
 
@@ -40,7 +40,17 @@
 @endsection
 @push('scripts')
         <script type="text/javascript">
-            
+            function lihatSapi(trigerer){
+                    var tr = $(trigerer).parent().parent();
+                    var modal = $(trigerer).data("target");
+                    $(modal + " #merksapi").html($("#table-sapi").DataTable().row(tr).data().merksapi);
+                    $(modal + " #keterangan").html($("#table-sapi").DataTable().row(tr).data().keterangan);
+                    $(modal + " #susu").html("Susu: "+$("#table-sapi").DataTable().row(tr).data().susu);
+                    $(modal + " #bobot").html("Bobot Badan: "+$("#table-sapi").DataTable().row(tr).data().bobot);
+                    $(modal + " #umur").html("umur"+$("#table-sapi").DataTable().row(tr).data().umur);
+                    $(modal + " #konsumsi").html("konsumsi"+$("#table-sapi").DataTable().row(tr).data().konsumsi);
+                    $(modal + " #price").html("Prices"+$("#table-sapi").DataTable().row(tr).data().Price_rupiah);
+                }
             // function editDataUser(trigerer){
             //         var tabel = $(trigerer).parent().data('table-target');
             //         var modal = $(trigerer).data('target');
@@ -57,24 +67,24 @@
             //         $(form+"input#id").val(data.id);
             //     }
             $(document).ready(function() {
-                $("#table-mahasiswa").DataTable({
+                $("#table-sapi").DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: '{!! route('admin.saw.matrix_nilai') !!}',
+                    ajax: '{!! route('admin.sapi.index') !!}',
                     order:[0,'desc'],
                     columns:[
                         {data:'id', name: 'id'},
                         {data:'merksapi',name :'merksapi'},
                         {data:'keterangan', name: 'keterangan'},
-                        {data:'l_susu',name:'l_susu'},
-                        {data:'l_konsumsi',name:'l_konsumsi'},
-                        {data:'l_umur',name:'l_umur'},
-                        {data:'l_bobot',name:'l_bobot'},
-                        {data:'l_price',name:'l_price'}                        
+                        {data:'bobot',name:'bobot'},
+                        {data:'susu',name:'susu'},
+                        {data:'umur',name:'umur'},
+                        {data:'konsumsi',name:'konsumsi'},
+                        {data:'Price_rupiah',name:'Price_rupiah'}
                     ]
                 });
             } );
 
         </script>
-        @include("admin.script.form-modal-ajax")
+        @include("user.script.form-modal-ajax")
 @endpush

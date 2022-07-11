@@ -64,7 +64,7 @@
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                    aria-haspopup="false" aria-expanded="false">
-                                 <span class="ml-1 pro-user-name">{{Auth::user()->name}}  <i class="mdi mdi-chevron-down"></i> </span>
+                                 <!-- <span class="ml-1 pro-user-name"> {{Auth::user()->name}}   <i class="mdi mdi-chevron-down"></i> </span> -->
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                     <!-- item-->
@@ -107,7 +107,7 @@
 
             <div class="navbar-custom">
                 <div class="container-fluid">
-                    @include('layouts.admin-nav')
+                    @include('layouts.user-nav')
                 </div> <!-- end container -->
             </div> <!-- end navbar-custom -->
         </header>
@@ -130,7 +130,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        2022 © Sistem Pendukung Keputusan Pembelian Sapi
+                        2022 © Sistem Pendukung Keputusan 
                     </div>
                 </div>
             </div>

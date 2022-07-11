@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 24, 2022 at 01:17 PM
+-- Generation Time: Jul 08, 2022 at 07:21 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -95,8 +95,8 @@ CREATE TABLE `role_user` (
 --
 
 INSERT INTO `role_user` (`user_id`, `role_id`, `created_at`, `updated_at`) VALUES
-(1, 1, NULL, NULL),
-(1, 2, NULL, NULL);
+(1, 2, NULL, NULL),
+(2, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -106,42 +106,32 @@ INSERT INTO `role_user` (`user_id`, `role_id`, `created_at`, `updated_at`) VALUE
 
 CREATE TABLE `sapi` (
   `id` int(9) NOT NULL,
-  `Company` varchar(9) DEFAULT NULL,
-  `Product` varchar(45) DEFAULT NULL,
-  `TypeName` varchar(18) DEFAULT NULL,
-  `Inches` decimal(3,1) DEFAULT NULL,
-  `ScreenResolution` varchar(45) DEFAULT NULL,
-  `Cpu` varchar(37) DEFAULT NULL,
-  `Ram` varchar(6) DEFAULT NULL,
-  `Memory` varchar(29) DEFAULT NULL,
-  `Gpu` varchar(30) DEFAULT NULL,
-  `OpSys` varchar(12) DEFAULT NULL,
-  `Weight` varchar(7) DEFAULT NULL,
-  `Price_euros` decimal(6,2) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Price_rupiah` int(10) NOT NULL,
   `susu` int(3) NOT NULL,
   `umur` varchar(9) DEFAULT NULL,
   `konsumsi` varchar(5) DEFAULT NULL,
-  `bobot` varchar(7) DEFAULT NULL
+  `bobot` varchar(7) DEFAULT NULL,
+  `merksapi` varchar(20) DEFAULT NULL,
+  `keterangan` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `sapi`
 --
 
-INSERT INTO `sapi` (`id`, `Company`, `Product`, `TypeName`, `Inches`, `ScreenResolution`, `Cpu`, `Ram`, `Memory`, `Gpu`, `OpSys`, `Weight`, `Price_euros`, `updated_at`, `created_at`, `Price_rupiah`, `susu`, `umur`, `konsumsi`, `bobot`) VALUES
-(1, 'Apple', 'MacBook Pro', 'Ultrabook', '13.3', 'IPS Panel Retina Display 2560x1600', 'Intel Core i5 2.3GHz', '8GB', '128GB SSD', 'Intel Iris Plus Graphics 640', 'macOS', '1.37kg', '1339.69', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 10000000, 3, '16 bulan', '5 kg', '130 kg'),
-(2, 'Apple', 'Macbook Air', 'Ultrabook', '13.3', '1440x900', 'Intel Core i5 1.8GHz', '8GB', '128GB Flash Storage', 'Intel HD Graphics 6000', 'macOS', '1.34kg', '898.94', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 11000000, 4, '34 bulan', '10 kg', '150 kg'),
-(3, 'HP', '250 G6', 'Notebook', '15.6', 'Full HD 1920x1080', 'Intel Core i5 7200U 2.5GHz', '8GB', '256GB SSD', 'Intel HD Graphics 620', 'No OS', '1.86kg', '575.00', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 12000000, 5, '28 bulan', '7 kg', '210 kg'),
-(4, 'Apple', 'MacBook Pro', 'Ultrabook', '15.4', 'IPS Panel Retina Display 2880x1800', 'Intel Core i7 2.7GHz', '16GB', '512GB SSD', 'AMD Radeon Pro 455', 'macOS', '1.83kg', '2537.45', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 9000000, 3, '18 bulan', '6 kg', '170 kg'),
-(5, 'Apple', 'MacBook Pro', 'Ultrabook', '13.3', 'IPS Panel Retina Display 2560x1600', 'Intel Core i5 3.1GHz', '8GB', '256GB SSD', 'Intel Iris Plus Graphics 650', 'macOS', '1.37kg', '1803.60', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 45000000, 10, '48 bulan', '15 kg', '230 kg'),
-(6, 'Acer', 'Aspire 3', 'Notebook', '15.6', '1366x768', 'AMD A9-Series 9420 3GHz', '4GB', '500GB HDD', 'AMD Radeon R5', 'Windows 10', '2.1kg', '400.00', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 23000000, 7, '39 bulan', '13 kg', '270 kg'),
-(7, 'Apple', 'MacBook Pro', 'Ultrabook', '15.4', 'IPS Panel Retina Display 2880x1800', 'Intel Core i7 2.2GHz', '16GB', '256GB Flash Storage', 'Intel Iris Pro Graphics', 'Mac OS X', '2.04kg', '2139.97', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 16000000, 6, '30 bulan', '7 kg', '185 kg'),
-(8, 'Apple', 'Macbook Air', 'Ultrabook', '13.3', '1440x900', 'Intel Core i5 1.8GHz', '8GB', '256GB Flash Storage', 'Intel HD Graphics 6000', 'macOS', '', '1158.70', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 12250000, 5, '36 bulan', '10 kg', '270 kg'),
-(9, 'Asus', 'ZenBook UX430UN', 'Ultrabook', '14.0', 'Full HD 1920x1080', 'Intel Core i7 8550U 1.8GHz', '16GB', '', 'Nvidia GeForce MX150', 'Windows 10', '1.3kg', '1495.00', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 16000000, 6, '50 bulan', '14 kg', '360 kg'),
-(10, 'Acer', 'Swift 3', 'Ultrabook', '14.0', 'IPS Panel Full HD 1920x1080', 'Intel Core i5 8250U 1.6GHz', '8GB', '256GB SSD', 'Intel UHD Graphics 620', 'Windows 10', '1.6kg', '770.00', '2019-07-04 07:43:57', '2019-07-04 07:43:57', 16500000, 7, '40 bulan', '18 kg', '300 kg');
+INSERT INTO `sapi` (`id`, `updated_at`, `created_at`, `Price_rupiah`, `susu`, `umur`, `konsumsi`, `bobot`, `merksapi`, `keterangan`) VALUES
+(4, '2019-07-04 07:43:57', '2019-07-04 07:43:57', 9000000, 3, '18 bulan', '6 kg', '170 kg', 'FH', NULL),
+(5, '2019-07-04 07:43:57', '2019-07-04 07:43:57', 45000000, 10, '48 bulan', '15 kg', '230 kg', 'FH', NULL),
+(6, '2019-07-04 07:43:57', '2019-07-04 07:43:57', 23000000, 7, '39 bulan', '13 kg', '270 kg', 'Jersey', NULL),
+(7, '2019-07-04 07:43:57', '2019-07-04 07:43:57', 16000000, 6, '30 bulan', '7 kg', '185 kg', 'Jersey', NULL),
+(8, '2019-07-04 07:43:57', '2019-07-04 07:43:57', 12250000, 5, '36 bulan', '10 kg', '270 kg', 'Jersey', NULL),
+(9, '2019-07-04 07:43:57', '2019-07-04 07:43:57', 16000000, 6, '50 bulan', '14 kg', '360 kg', 'FH', NULL),
+(10, '2019-07-04 07:43:57', '2019-07-04 07:43:57', 16500000, 7, '40 bulan', '18 kg', '300 kg', 'Jersey', NULL),
+(11, '2022-06-30 03:09:41', '2022-06-30 03:09:41', 21000000, 4, '28 bulan', '20 kg', '231 kg', 'Jersey', 'asal desa mliwis'),
+(12, '2022-07-07 03:52:40', '2022-07-07 03:52:40', 11000000, 4, '7 bulan', '7 kg', '300 kg', 'dummy', 'dummy'),
+(13, '2022-07-07 07:43:13', '2022-07-07 07:43:13', 21000000, 2, '34 bulan', '15 kg', '300 kg', 'FH', 'asal sapi desa bubakan');
 
 -- --------------------------------------------------------
 
@@ -162,11 +152,11 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`id`, `key`, `value`, `created_at`, `updated_at`) VALUES
-(1, 'c1', '{\"weight\":\"0.6\",\"is_cost\":\"0\"}', '2019-07-04 09:00:38', '2019-07-04 19:19:07'),
-(2, 'c2', '{\"weight\":\"0.2\",\"is_cost\":\"0\"}', '2019-07-04 09:00:38', '2019-07-04 19:18:43'),
-(3, 'c3', '{\"weight\":\"0.8\",\"is_cost\":\"0\"}', '2019-07-04 09:00:38', '2019-07-04 19:19:24'),
-(4, 'c4', '{\"weight\":\"0.6\",\"is_cost\":\"1\"}', '2019-07-04 09:00:38', '2022-06-23 19:54:45'),
-(5, 'c5', '{\"weight\":\"1\",\"is_cost\":\"1\"}', '2019-07-04 09:00:38', '2019-07-10 18:55:08');
+(1, 'c1', '{\"weight\":\"0.6\",\"is_cost\":\"0\"}', '2019-07-04 09:00:38', '2022-07-01 02:42:47'),
+(2, 'c2', '{\"weight\":\"0.8\",\"is_cost\":\"1\"}', '2019-07-04 09:00:38', '2022-07-01 02:43:08'),
+(3, 'c3', '{\"weight\":\"0.6\",\"is_cost\":\"1\"}', '2019-07-04 09:00:38', '2022-07-01 02:28:46'),
+(4, 'c4', '{\"weight\":\"0.6\",\"is_cost\":\"0\"}', '2019-07-04 09:00:38', '2022-07-04 04:59:24'),
+(5, 'c5', '{\"weight\":\"0.8\",\"is_cost\":\"1\"}', '2019-07-04 09:00:38', '2022-07-01 02:43:08');
 
 -- --------------------------------------------------------
 
@@ -190,7 +180,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@minhajul.com', NULL, '$2y$10$2IHbySIbf6/NJVWs1VU6k.2dAAqbi6XBInYrlyMlUskVtPM27M2dS', NULL, '2019-07-03 20:13:31', '2019-07-03 20:13:31');
+(1, 'Admin', 'admin@minhajul.com', NULL, '$2y$10$2IHbySIbf6/NJVWs1VU6k.2dAAqbi6XBInYrlyMlUskVtPM27M2dS', '2C9y0bwrIsp9Lh1AKzyfkBDwXZlPmt9dDmC2XqgnvpDduAcbcpJUom7jmRXB', '2019-07-03 20:13:31', '2019-07-03 20:13:31'),
+(2, 'user', 'user@gmail.com', NULL, '$2y$10$YhDT/jW6YcTdndH5UF41sOLK2asHYG2kCdmmcLvwuWiONwZL3uL8i', NULL, '2022-06-29 08:42:05', '2022-06-29 08:42:05');
 
 --
 -- Indexes for dumped tables
@@ -260,7 +251,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `sapi`
 --
 ALTER TABLE `sapi`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `setting`
@@ -272,7 +263,7 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

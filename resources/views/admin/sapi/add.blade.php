@@ -19,27 +19,27 @@
                     <div class="form-group m-b-25">
                         <div class="col-12">
                             <label for="username">Merk Sapi</label>
-                            <input class="form-control" name="merksapi" type="text" id="name" required="" placeholder="merksapi">
+                            <input class="form-control" name="merksapi" type="text" id="name" required placeholder="merksapi">
                         </div>
                     </div>
 
                     <div class="form-group m-b-25">
                         <div class="col-12">
                             <label for="emailaddress">Keterangan</label>
-                            <input class="form-control" name="keterangan" type="text" id="email" required="" placeholder="keterangan">
+                            <input class="form-control" name="keterangan" type="text" id="email" required placeholder="keterangan">
                         </div>
                     </div>
                      
                     <div class="form-group m-b-25">
                         <div class="col-12">
                             <label for="emailaddress">Penghasilan Susu </label>
-                            <input class="form-control" name="susu" type="text" id="email" required="" placeholder="susu">
+                            <input class="form-control" name="susu" type="text" id="email" required placeholder="susu">
                         </div>
                     </div>
                     <div class="form-group m-b-25">
                             <div class="col-12">
                                 <label for="emailaddress">Bobot Badan</label>
-                                <input class="form-control" name="bobot" type="text" id="email" required="" placeholder="Bobot Badan">
+                                <input class="form-control" name="bobot" type="text" id="email" required placeholder="bobot">
                             </div>
                     </div>
                     
@@ -47,7 +47,7 @@
                     <div class="form-group m-b-25">
                             <div class="col-12">
                                 <label for="emailaddress">Umur Sapi</label>
-                                <input class="form-control" name="umur" type="text" id="email" required="" placeholder="umur">
+                                <input class="form-control" name="umur" type="text" id="email" required placeholder="umur">
                             </div>
                     </div>
                     
@@ -56,13 +56,13 @@
                     <div class="form-group m-b-25">
                         <div class="col-12">
                             <label for="emailaddress">Konsumsi Pakan</label>
-                            <input class="form-control" name="konsumsi" type="text" id="email" required="" placeholder="konsumsi">
+                            <input class="form-control" name="konsumsi" type="text" id="email" required placeholder="konsumsi">
                         </div>
                     </div>
                     <div class="form-group m-b-25">
                         <div class="col-12">
                             <label for="emailaddress">Prices </label>
-                            <input class="form-control" name="prices" type="text" id="email" required="" placeholder="Prices">
+                            <input class="form-control" name="prices" type="text" id="email" required placeholder="prices">
                         </div>
                     </div>
                     <div class="form-group account-btn text-center m-t-10">

@@ -14,17 +14,11 @@ class sawController extends Controller
         $sapi = Sapi::all();
         foreach ($sapi as $key) {
             # code...
-            // preg_match_all('/[0-9]{3,}/m', $key->ScreenResolution, $matches, PREG_SET_ORDER, 0);
             preg_match_all('/[0-9]{3,}/m', $key->bobot, $matches, PREG_SET_ORDER, 0);
-            // $key->l_inches = $key->Inches;
             $key->l_susu = $key->susu;
             $key->l_price = $key->Price_rupiah;
-            //$key->l_weight = (float) filter_var($key->Weight, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
-            //$key->l_konsumsi = $key->konsumsi;
             $key->l_konsumsi = (float) filter_var($key->konsumsi, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
-            // $key->l_ram = preg_replace('/\D/', '', $key->Ram);          
             $key->l_umur = preg_replace('/\D/', '', $key->umur);   
-            // $key->l_screenresolution = $matches[0][0];
             $key->l_bobot = $matches[0][0];
         }
         return $sapi->all();
@@ -39,36 +33,24 @@ class sawController extends Controller
         $c4 = json_decode($options['c4']);
         $c5 = json_decode($options['c5']);
         $sapi = $this->get_matrix_nilai();
-        // $temp_inches = [];
         $temp_susu = [];
         $temp_price = [];
-        //$temp_weight = [];
         $temp_konsumsi = [];
-        // $temp_ram = [];
         $temp_umur = [];
-        // $temp_screenresolution = [];
         $temp_bobot = [];
         foreach ($sapi as $key) {
             # code...
-            // $temp_inches[] = $key->l_inches;
             $temp_susu[] = $key->l_susu;
             $temp_price[] = $key->l_price;
-            //$temp_weight[] = $key->l_weight;
             $temp_konsumsi[] = $key->l_konsumsi;
-            // $temp_ram[] = $key->l_ram;
             $temp_umur[] = $key->l_umur;
-            // $temp_screenresolution[] = $key->l_screenresolution;
             $temp_bobot[] = $key->l_bobot;
         }
         foreach ($sapi as $key) {
             # code...
-            // $key->n_inches = ($c1->is_cost) ? min($temp_inches)/$key->l_inches : $key->l_inches/max($temp_inches);
             $key->n_susu = ($c1->is_cost) ? min($temp_susu)/$key->l_susu : $key->l_susu/max($temp_susu);
-            //$key->n_weight = ($c2->is_cost) ? min($temp_weight)/$key->l_weight : $key->l_weight/max($temp_weight);
             $key->n_konsumsi = ($c2->is_cost) ? min($temp_konsumsi)/$key->l_konsumsi : $key->l_konsumsi/max($temp_konsumsi);
-            // $key->n_ram = ($c3->is_cost) ? min($temp_ram)/$key->l_ram : $key->l_ram/max($temp_ram);
             $key->n_umur = ($c3->is_cost) ? min($temp_umur)/$key->l_ram : $key->l_umur/max($temp_umur);
-            // $key->n_screenresolution = ($c4->is_cost) ? min($temp_screenresolution)/$key->l_screenresolution : $key->l_screenresolution/max($temp_screenresolution);
             $key->n_bobot = ($c4->is_cost) ? min($temp_bobot)/$key->l_bobot : $key->l_bobot/max($temp_bobot);
             $key->n_price = ($c5->is_cost) ? min($temp_price)/$key->l_price : $key->l_price/max($temp_price);
 
@@ -86,16 +68,11 @@ class sawController extends Controller
         $sapi = $this->get_matrix_normalisasi();
         foreach ($sapi as $key) {
             # code...
-            // $key->b_inches = $key->n_inches*$c1->weight;
             $key->b_susu = $key->n_susu*$c1->weight;
-            //$key->b_weight = $key->n_weight*$c2->weight;
             $key->b_konsumsi = $key->n_konsumsi*$c2->weight;
-            // $key->b_ram = $key->n_ram*$c3->weight;
             $key->b_umur = $key->n_umur*$c3->weight;
-            // $key->b_screenresolution = $key->n_screenresolution*$c4->weight;
             $key->b_bobot = $key->n_bobot*$c4->weight;
             $key->b_price = $key->n_price*$c5->weight;
-            // $key->nilai_preferensi = $key->b_inches+$key->b_weight+$key->b_ram+$key->b_screenresolution+$key->b_price;
             $key->nilai_preferensi = $key->b_susu+$key->b_konsumsi+$key->b_umur+$key->b_bobot+$key->b_price;
         }
         return $sapi;

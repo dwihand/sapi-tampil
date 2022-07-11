@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 @section('title')
     Setting Page
 @endsection
@@ -133,15 +133,15 @@
                         <div class="form-group">
                               <label for="">Bobot Badan (C4)  </label>
                               <select name="w_c4" id="" class="form-control">
-                                <option value="0.2" @if ($c33->weight == 0.2)
+                                <option value="0.2" @if ($c44->weight == 0.2)
                                     {{ "selected" }} @endif >Sangat Rendah </option>
-                                <option value="0.4" @if ($c33->weight == 0.4)
+                                <option value="0.4" @if ($c44->weight == 0.4)
                                   {{ "selected" }} @endif>Rendah </option>
-                                <option value="0.6" @if ($c33->weight == 0.6)
+                                <option value="0.6" @if ($c44->weight == 0.6)
                                   {{ "selected" }} @endif>Sedang </option>
-                                <option value="0.8" @if ($c33->weight == 0.8)
+                                <option value="0.8" @if ($c44->weight == 0.8)
                                   {{ "selected" }} @endif>Tinggi </option>
-                                <option value="1" @if ($c33->weight == 1)
+                                <option value="1" @if ($c44->weight == 1)
                                   {{ "selected" }} @endif>Sangat Tinggi </option>
                             </select>
                         </div>

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 @section('title')
     Hasil Rekomendasi | Sitem Pendukung Keputusan Pembelian Sapi
 @endsection

@@ -15,7 +15,7 @@
                                                                     <p class="card-text" id="keterangan"></p>
                                                                 </div>
                                                                 <ul class="list-group list-group-flush">
-                                                                    <li class="list-group-item" id="susu">Susu: </li>
+                                                                    <li class="list-group-item" id="susu">Penghasilan Susu: </li>
                                                                     <li class="list-group-item" id="bobot">Bobot Badan: </li>
                                                                     <li class="list-group-item" id="umur">Umur: </li>
                                                                     <li class="list-group-item" id="konsumsi">Konsumsi Pakan: </li>

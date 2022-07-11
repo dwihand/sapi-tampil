@@ -41,24 +41,12 @@ class sapiController extends Controller
         # code...
         $res = ['stored'=>true];
         $validator = Validator::make($request->all(),[
-            // "product" => "required|min:3",
             "keterangan" => "required",
-            // 'company' => 'required|min:3',
             'merksapi' => 'required',
-            'typename' => 'required',
-            // 'inches' => 'required|numeric',
             'susu' => 'required|numeric',
-            // 'screenresolution' => 'required',
             'bobot' => 'required',
-            'cpu' => 'required',
-            // 'ram' => 'required',
             'umur' => 'required',
-            'memory' => 'required',
-            'gpu' => 'required|min:3',
-            'operating_system' => 'required|min:3',
-            //'weight' => 'required|min:3',
             'konsumsi' => 'required',
-            //'konsumsi' => 'required|min:3',
             'prices' => 'required|min:3|numeric',
         ]);
         if($validator->fails()){
@@ -66,22 +54,11 @@ class sapiController extends Controller
             $res['stored'] = false;
         }else{
             $sapi = new Sapi();
-            //$sapi->Company = $request->input("company");
-            $sapi->merksapi = $request->input("merkssapi");
-            // $sapi->Product = $request->input('product');
+            $sapi->merksapi = $request->input("merksapi");
             $sapi->keterangan = $request->input('keterangan');
-            $sapi->TypeName = $request->input('typename');
-            // $sapi->Inches = $request->input('inches');
             $sapi->susu = $request->input('susu');
-            // $sapi->ScreenResolution = $request->input('screenresolution');
             $sapi->bobot = $request->input('bobot');
-            $sapi->Cpu = $request->input('cpu');
-            // $sapi->Ram = $request->input('ram');
             $sapi->umur = $request->input('umur');
-            $sapi->Memory = $request->input('memory');
-            $sapi->Gpu = $request->input('gpu');
-            $sapi->OpSys = $request->input('operation_system');
-            //$sapi->Weight = $request->input('weight');
             $sapi->konsumsi = $request->input('konsumsi');
             $sapi->Price_rupiah = $request->input('prices');
             $sapi->save();

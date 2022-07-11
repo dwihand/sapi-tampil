@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
+use Illuminate\Http\Request;
+
 class LoginController extends Controller
 {
     /*
@@ -20,12 +22,29 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    protected function authenticated(Request $request, $user)
+    {
+        if (Auth::user()->hasRole('Administrator')) {// do your magic here
+            return redirect('/first_page');
+        }else if(Auth::user()->hasRole('User')){
+            return redirect('/user');
+        }
+    }
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+
+    // public function redirectPath()
+    // {
+    //     if(Auth::user()->hasRole('Administrator')){
+    //         return redirect('/admin');
+    //     }else if(Auth::user()->hasRole('User')){
+    //         return redirect('/user');
+    //     }
+    // }
 
     /**
      * Create a new controller instance.
@@ -35,15 +54,5 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-    public function redirectPath()
-    {
-    
-        if(Auth::user()->hasRole('Administrator')){
-            return '/tes';
-        }else if(Auth::user()->hasRole('User')){
-            return '/home';
-        }
-        return $this->redirectTo;
     }
 }

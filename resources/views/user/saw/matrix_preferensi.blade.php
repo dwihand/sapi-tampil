@@ -1,6 +1,6 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 @section('title')
-    Matrix Normalisasi | Sitem Rekomendasi Laptop
+    Matrix Preferensi | Sitem Pendukung Pembelian Sapi
 @endsection
 @section('content')
 <br>
@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-12">
         <div class="card-box table-responsive">
-            <h4 class="m-t-0 header-title"><b>Matrix Normalisasi</b></h4>
+            <h4 class="m-t-0 header-title"><b>Matrix Preferensi</b></h4>
             <p class="text-muted font-14 m-b-30">
             
             </p>
@@ -23,7 +23,8 @@
                     <th>Konsumsi Pakan (C2)</th>
                     <th>Umur Sapi (C3)</th>
                     <th>Bobot Badan (C4)</th>
-                    <th>Price (C5)</th>                                          
+                    <th>Price (C5)</th>
+                    <th>Total</th>                                          
                 </tr>
                 </thead>
 
@@ -60,17 +61,18 @@
                 $("#table-mahasiswa").DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: '{!! route('admin.saw.matrix_normalisasi') !!}',
+                    ajax: '{!! route('admin.saw.matrix_preferensi') !!}',
                     order:[0,'desc'],
                     columns:[
                         {data:'id', name: 'id'},
                         {data:'merksapi', name: 'merksapi'},
                         {data:'keterangan', name: 'keterangan'},
-                        {data:'n_susu',name:'n_susu'},
-                        {data:'n_konsumsi',name:'n_konsumsi'},
-                        {data:'n_umur',name:'n_umur'},
-                        {data:'n_bobot',name:'n_bobot'},
-                        {data:'n_price',name:'n_price'}                        
+                        {data:'b_susu',name:'b_susu'},
+                        {data:'b_konsumsi',name:'b_konsumsi'},
+                        {data:'b_umur',name:'b_umur'},
+                        {data:'b_bobot',name:'b_bobot'},
+                        {data:'b_price',name:'b_price'},
+                        {data:'nilai_preferensi',name:'nilai_preferensi'}                         
                     ]
                 });
             } );

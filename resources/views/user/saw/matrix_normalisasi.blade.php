@@ -1,6 +1,6 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 @section('title')
-    Matrix Normalisasi | Sitem Rekomendasi Laptop
+    Matrix Normalisasi | Sitem Pendukung Keputusan Pembelian Sapi
 @endsection
 @section('content')
 <br>

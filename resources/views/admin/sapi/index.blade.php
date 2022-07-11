@@ -60,22 +60,11 @@
             function lihatSapi(trigerer){
                     var tr = $(trigerer).parent().parent();
                     var modal = $(trigerer).data("target");
-                    // $(modal + " #company").html($("#table-mahasiswa").DataTable().row(tr).data().Company);
                     $(modal + " #merksapi").html($("#table-mahasiswa").DataTable().row(tr).data().merksapi);
-                    // $(modal + " #product").html($("#table-mahasiswa").DataTable().row(tr).data().Product);
                     $(modal + " #keterangan").html($("#table-mahasiswa").DataTable().row(tr).data().keterangan);
-                    $(modal + " #typename").html("Type Name: " + $("#table-mahasiswa").DataTable().row(tr).data().TypeName);
-                    // $(modal + " #Inches").html("Inches: "+$("#table-mahasiswa").DataTable().row(tr).data().Inches);
                     $(modal + " #susu").html("Susu: "+$("#table-mahasiswa").DataTable().row(tr).data().susu);
-                    // $(modal + " #screenresolution").html("Screen Resolution: "+$("#table-mahasiswa").DataTable().row(tr).data().ScreenResolution);
                     $(modal + " #bobot").html("Bobot Badan: "+$("#table-mahasiswa").DataTable().row(tr).data().bobot);
-                    $(modal + " #cpu").html("Cpu"+$("#table-mahasiswa").DataTable().row(tr).data().Cpu);
-                    // $(modal + " #ram").html("Ram"+$("#table-mahasiswa").DataTable().row(tr).data().Ram);
                     $(modal + " #umur").html("umur"+$("#table-mahasiswa").DataTable().row(tr).data().umur);
-                    $(modal + " #memory").html("Memory"+$("#table-mahasiswa").DataTable().row(tr).data().Memory);
-                    $(modal + " #gpu").html("GPU"+ $("#table-mahasiswa").DataTable().row(tr).data().Gpu);
-                    $(modal + " #opsys").html("Operating System"+$("#table-mahasiswa").DataTable().row(tr).data().OpSys);
-                    //$(modal + " #weight").html("Weight"+$("#table-mahasiswa").DataTable().row(tr).data().Weight);
                     $(modal + " #konsumsi").html("konsumsi"+$("#table-mahasiswa").DataTable().row(tr).data().konsumsi);
                     $(modal + " #price").html("Prices"+$("#table-mahasiswa").DataTable().row(tr).data().Price_rupiah);
                 }
